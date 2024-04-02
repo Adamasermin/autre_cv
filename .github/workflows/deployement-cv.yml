@@ -1,0 +1,19 @@
+name: Déployer CV sur Github Pages
+
+on: workflow_dispatch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Déployer sur Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: main
+          
+      - name: Message de fin
+        run: echo "Workflow terminé"
+
